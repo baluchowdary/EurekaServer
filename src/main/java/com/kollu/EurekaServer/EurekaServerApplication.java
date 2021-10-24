@@ -23,10 +23,10 @@ public class EurekaServerApplication {
 	
 /*Distributed Tracing/Zipkin*/
 	
-	@Bean
+	/*@Bean
 	public Sampler defaultSampler() {
 		System.out.println("Console:: EurekaServerApplication - defaultSampler method");
 		logger.info("EurekaServerApplication - defaultSampler method");
 	    return Sampler.ALWAYS_SAMPLE;
-	}
+	}*/
 }
