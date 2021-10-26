@@ -23,6 +23,8 @@ services:
       - "9096:9096"
     networks:
       - eurekaserver-network
+    depends_on:
+      - eurekaserver
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka
       SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
@@ -36,6 +38,8 @@ services:
       - "9095:9095"
     networks:
       - eurekaserver-network
+    depends_on:
+      - eurekaserver
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka
       SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/  
