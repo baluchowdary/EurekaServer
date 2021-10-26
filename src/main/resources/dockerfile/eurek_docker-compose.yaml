@@ -12,7 +12,6 @@ services:
       - eurekaserver  
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka
-      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
     environment:
       - TZ="Asia/Kolkata"
       
@@ -27,7 +26,6 @@ services:
       - eurekaserver
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka
-      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
     environment:
       - TZ="Asia/Kolkata"
       
@@ -41,8 +39,7 @@ services:
     depends_on:
       - eurekaserver
     environment:
-      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka
-      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/  
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eurekaserver:8761/eureka  
     environment:
       - TZ="Asia/Kolkata"
              
@@ -51,16 +48,6 @@ services:
     mem_limit: 1024m
     ports:
       - "8761:8761"
-    networks:
-      - eurekaserver-network
-    environment:
-      - TZ="Asia/Kolkata"
-      
-  zipkin-server:
-    image: kolludocker/openzipkin/zipkin:2.23
-    mem_limit: 1024m
-    ports:
-      - "9411:9411"
     networks:
       - eurekaserver-network
     environment:
