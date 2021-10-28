@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.6'
 
 services:
   eurekaserver:
@@ -7,10 +7,10 @@ services:
     ports:
       - "8761:8761"
     networks:
-      - eurekaserver-network
+      - kollunet
     environment:
       - TZ="Asia/Kolkata"
       
 networks:
-  eurekaserver-network:
+  kollunet:
   
