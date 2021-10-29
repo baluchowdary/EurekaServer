@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:           
+  eurekaserver:
+    image: kolludocker/eurekaserver-eurekaserver:0.0.1-phase3
+    ports:
+      - "8761:8761"
+    networks:
+      - kollunet
+    environment:
+      - TZ="Asia/Kolkata"
+      
+  zipkin-server:
+    image: openzipkin/zipkin:2.23
+    ports:
+      - "9411:9411"
+    networks:
+      - kollunet
+    depends_on:
+      - rabbitmq
+    restart: always
+    environment:
+      - TZ="Asia/Kolkata"
+    environment:
+      RABBIT_URI: amqp://guest:guest@rabbitmq:5672 
+       
+  rabbitmq:
+    image: rabbitmq:3.5.3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - kollunet    
+      
+networks:
+  kollunet:
+  

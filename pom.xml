@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.kollu.EurekaServer</groupId>
 	<artifactId>eurekaserver</artifactId>
-	<version>0.0.3-phase3</version>
+	<version>0.0.1-phase3</version>
 	<name>EurekaServer</name>
 	<description>EurekaServer for Spring boot and Microservices</description>
 	<properties>
